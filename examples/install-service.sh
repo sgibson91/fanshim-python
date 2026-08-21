@@ -228,7 +228,7 @@ EOF
 
 if [ $? -ne 0 ]; then
 	printf "Installing rpi.gpio\n"
-	$PIP install --upgrade "rpi.gpio>=0.7.0"
+	$PIP install --break-system-packages --upgrade "rpi.gpio>=0.7.0"
 else
 	printf "rpi.gpio >= 0.7.0 already installed\n"
 fi
@@ -240,7 +240,7 @@ EOF
 
 if [ $? -ne 0 ]; then
 	printf "Installing Fan SHIM\n"
-	$PIP install fanshim
+	$PIP install --break-system-packages fanshim
 else
 	printf "Fan SHIM already installed\n"
 fi
@@ -255,7 +255,7 @@ EOF
 
 if [ $? -ne 0 ]; then
 	printf "Installing psutil\n"
-	$PIP install --ignore-installed psutil
+	$PIP install --break-system-packages --ignore-installed psutil
 else
 	printf "psutil >= $PSUTIL_MIN_VERSION already installed\n"
 fi
